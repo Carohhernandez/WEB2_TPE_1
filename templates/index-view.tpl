@@ -1,5 +1,3 @@
-<?php require 'header.php' ?>
-
 <section id="showcase" class="d-flex justify-content-center align-items-center">
     <div id="header" class="container text-white text-center">
         <h3 class="display-5 mb-0">Voyage Blog</h3>
@@ -44,22 +42,6 @@
 </section>
 
 <section>
-    <div id="about" class="container my-5 d-flex align-content-center">
-        <div class="row p-5 align-content-center" >
-            <div class="col-md-6 bg-light p-4">
-                <h4 class="display-5 py-3">Hi! I'm Caro.</h4>
-                <p class="lead" style="line-height: 2.5rem;">Sed ut perspiciatis unde omnis iste natus error  sit  voluptatem. 
-                Accusantium doloremque  laudantium, totam rem aperiam,  eaque ipsa quae ab illo inventore veritatis et quasi.
-                Architecto beatae vitae dicta sunt explicabo. 
-                Nemo enim ipsam voluptatem quia voluptas sit.
-                </p>
-                <h4 class="display-5 text-secondary py-3">Good Trip</h4>  
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
     <div class="container px-0 mt-5">
         <h3 class="separator text-center">Top travel guides</h3>
     </div>
@@ -96,5 +78,4 @@
     </div>
 </section>
 
-<?php require 'footer.php' ?>
 

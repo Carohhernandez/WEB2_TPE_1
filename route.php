@@ -1,5 +1,6 @@
 <?php
 require_once "Controller/ArticuloController.php";
+require_once "Controller/PaisController.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -12,11 +13,12 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 $articuloController = new ArticuloController();
+$paisController = new PaisController();
 
 
 switch ($params[0]) {
     case 'home': 
-        $articuloController->showHome(); 
+        $paisController->getPaises(); 
         break;
     case 'createArticulo': 
         $articuloController->createArticulo(); 

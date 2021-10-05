@@ -10,15 +10,15 @@ class PaisModel{
     function getPaises(){
         $statement = $this->db->prepare("SELECT * FROM paises");
         $statement->execute();
-        $articles = $statement->fetchAll(PDO::FETCH_OBJ);
-        return $articles;
+        $paises = $statement->fetchAll(PDO::FETCH_OBJ);
+        return $paises;
     }
 
     function getPais($id){
         $statement = $this->db->prepare( "select * from paises WHERE id_pais=?");
         $statement->execute(array($id));
-        $article = $statement->fetch(PDO::FETCH_OBJ);
-        return $article;
+        $pais = $statement->fetch(PDO::FETCH_OBJ);
+        return $pais;
     }
 
     function insertPais($nombre){
@@ -26,7 +26,7 @@ class PaisModel{
         $statement->execute(array($nombre));
     }
 
-    function deletPais($id){
+    function deletePais($id){
         $statement = $this->db->prepare("DELETE FROM paises WHERE id_pais=?");
         $statement->execute(array($id));
     }
