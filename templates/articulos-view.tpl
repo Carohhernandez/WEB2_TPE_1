@@ -4,7 +4,7 @@
     <div class="container px-0 mt-5">
         <h3 class="text-center">
          {if (isset($pais))}
-             {$titulo|cat: $pais}
+             {$titulo |cat: $pais}
         {else}
             {$titulo}
          {/if} 

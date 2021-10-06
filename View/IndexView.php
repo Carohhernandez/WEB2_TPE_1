@@ -8,7 +8,7 @@ class IndexView {
         $this->smarty = new Smarty();
     }
 
-    function showIndex($paises){      
+    function viewPaises($paises){      
         $this->smarty->assign('paises', $paises);
         $this->smarty->display('templates/index-view.tpl');
     }

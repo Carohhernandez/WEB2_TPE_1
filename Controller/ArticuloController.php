@@ -14,7 +14,7 @@ class ArticuloController{
 
     function viewArticulo($id){
         $articulo = $this->model->getArticulo($id);
-        $this->view->viewArticulos($articulo);
+        $this->view->viewArticulo($articulo);
     }
 
     function viewArticulos(){

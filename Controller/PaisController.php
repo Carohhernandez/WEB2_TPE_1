@@ -14,7 +14,7 @@ class PaisController{
 
     function getPaises(){
         $paises = $this->model->getPaises();
-        $this->view->showIndex($paises);
+        $this->view->viewPaises($paises);
     }
 
     function createPais(){
