@@ -15,7 +15,7 @@ class PaisModel{
     }
 
     function getPais($id){
-        $statement = $this->db->prepare( "select * from paises WHERE id_pais=?");
+        $statement = $this->db->prepare( "SELECT * FROM paises WHERE id_pais=?");
         $statement->execute(array($id));
         $pais = $statement->fetch(PDO::FETCH_OBJ);
         return $pais;

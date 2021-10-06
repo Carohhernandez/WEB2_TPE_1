@@ -10,21 +10,19 @@ class IndexView {
 
     function showIndex($paises){      
         $this->smarty->assign('paises', $paises);
-
         $this->smarty->display('templates/index-view.tpl');
     }
 
-    function showTask($task){
-        $this->smarty->assign('task', $task);
-        $this->smarty->display('templates/taskDetail.tpl');
-     }
-
-    function showHomeLocation(){
-        header("Location: ".BASE_URL."home");
+    function viewArticulos($articulos){
+        $this->smarty->assign('articulos', $articulos);
+        $this->smarty->assign('titulo', 'Todos nuestros articulos');
+        $this->smarty->display('templates/articulos-view.tpl');
     }
 
-    function showLoginLocation(){
-        header("Location: ".BASE_URL."login");
+    function viewArticulosByPais($articulos, $pais){
+        $this->smarty->assign('articulos', $articulos);
+        $this->smarty->assign('pais', $pais);
+        $this->smarty->assign('titulo', 'Articulos sobre');
+        $this->smarty->display('templates/articulos-view.tpl');
     }
-    
 }

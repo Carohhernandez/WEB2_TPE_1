@@ -1,4 +1,4 @@
-<?php require 'header.php' ?>
+{include file="header.tpl"}
 
 <div class="container" id="articlesContainer">
     <div class="post">
@@ -13,4 +13,4 @@
     </div>
 </div>
 
-<?php require 'footer.php' ?>
+{include file="footer.tpl"}

@@ -8,14 +8,21 @@ class ArticuloModel{
     }
 
     function getArticulos(){
-        $statement = $this->db->prepare("SELECT * FROM articulos");
+        $statement = $this->db->prepare("SELECT * FROM articulos JOIN paises ON pais = id_pais");
         $statement->execute();
         $articulos = $statement->fetchAll(PDO::FETCH_OBJ);
         return $articulos;
     }
 
+    function getArticulosByPais($pais){
+        $statement = $this->db->prepare("SELECT * FROM articulos JOIN paises ON pais = id_pais WHERE pais=?");
+        $statement->execute(array($pais));
+        $articulos = $statement->fetchAll(PDO::FETCH_OBJ);
+        return $articulos;
+    }
+
     function getArticulo($id){
-        $statement = $this->db->prepare( "select * from articulos WHERE id_articulo=?");
+        $statement = $this->db->prepare( "SELECT * FROM articulos WHERE id_articulo=?");
         $statement->execute(array($id));
         $articulo = $statement->fetch(PDO::FETCH_OBJ);
         return $articulo;

@@ -19,11 +19,9 @@ class PaisController{
 
     function createPais(){
         $this->model->insertPais($_POST['nombre']);
-        $this->view->showHomeLocation();
     }
 
     function deletePais($id){
         $this->model->deletePais($id);
-        $this->view->showHomeLocation();
     }
 }

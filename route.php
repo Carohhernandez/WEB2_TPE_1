@@ -20,6 +20,12 @@ switch ($params[0]) {
     case 'home': 
         $paisController->getPaises(); 
         break;
+    case 'viewArticulos': 
+        $articuloController->viewArticulos(); 
+        break;
+    case 'viewArticulosByPais': 
+        $articuloController->viewArticulosByPais($params[1]); 
+        break;
     case 'createArticulo': 
         $articuloController->createArticulo(); 
         break;
