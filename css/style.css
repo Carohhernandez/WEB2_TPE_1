@@ -13,6 +13,49 @@
     background-position: center;
 }
 
+/* Form */
+
+.form-container {
+    background-color: lightgray;
+    border-radius: 10px;
+    border: 5px solid lightsalmon;
+}
+
+.form-container input, select, textarea {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid lightsalmon;
+}
+
+.form-container button {
+    background-color: rgb(62, 62, 100);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.trash {
+    color: tomato;
+}
+
+.edit {
+    color: rgb(48, 107, 48);
+}
+
+/* Tooltip */
+
+.tooltip-inner {
+    color: white;
+    max-width: 250px;
+    padding: 10px;
+    text-align: center;
+    background-color:tomato;
+    border-radius: 10px;
+    border-style: none;
+} 
+
 /* Footer */
 
 .instagramContainer img {

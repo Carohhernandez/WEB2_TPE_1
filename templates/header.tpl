@@ -11,17 +11,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwsome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"><title>Travel & Vacations</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Travel & Vacations</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="mainNavbar navbar navbar-dark">
+    <nav class="mainNavbar navbar navbar-dark d-flex align-items-center justify-content-between w-100">
         <a href="{BASE_URL}" class="mainNavbar__brand navbar-brand"><h3 class="mb-0">Travel & Vacation</h3></a>
+        <a class="font-weight-bold text-light text-decoration-none mr-4" href="{if $login}logout{else}login{/if}">{if $login}Cerrar sesion{else}Iniciar sesion{/if}</a>
     </nav>
     <section id="showcase" class="d-flex align-items-center">
         <div class="container text-dark text-center">
             <h1 class="mb-4">Voyage Blog</h1>
-            <h2 class="font-weight-light text-light">Shared experiences to improve your journey</h2>
+            <h2 class="font-weight-light text-light">Experiencias compartidas para mejorar tu viaje</h2>
         </div>
     </section>
-

@@ -1,15 +1,14 @@
 {include file="header.tpl"}
 
-<div class="container" id="articlesContainer">
-    <div class="post">
-        <article>
-            <h2 class="title"><?php echo $post['title']?></h2>
-            <p class="date"><?php echo $post['date']?></p>
-            <div class="thumb">
-                <img src="<?php echo path;?>images/<?php echo $post['thumb']?>">
-            </div>
-            <p><?php echo nl2br($post['content']);?></p>
-        </article>
+<div class="d-flex flex-column">
+    <h2 class="my-4 text-center">{$titulo}</h2>
+    <div class="d-flex w-100 justify-content-around mt-4">
+        <div class="col-3 p-0">
+            <img src="{$imagen}" class='w-100'>
+        </div>
+        <div class="col-6">
+            <p>{$contenido}</p>
+        </div>
     </div>
 </div>
 

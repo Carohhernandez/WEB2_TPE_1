@@ -1,6 +1,7 @@
 <?php
 require_once "Controller/ArticuloController.php";
 require_once "Controller/PaisController.php";
+require_once "Controller/LoginController.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,17 +15,44 @@ $params = explode('/', $action);
 
 $articuloController = new ArticuloController();
 $paisController = new PaisController();
+$loginController = new LoginController();
 
 
 switch ($params[0]) {
     case 'home': 
         $paisController->getPaises(); 
         break;
-    case 'viewArticulos': 
-        $articuloController->viewArticulos(); 
+    case 'login': 
+        $loginController->login(); 
         break;
-    case 'viewArticulosByPais': 
-        $articuloController->viewArticulosByPais($params[1]); 
+    case 'logout': 
+        $loginController->logout(); 
+        break;
+    case 'verify': 
+        $loginController->verifyLogin(); 
+        break;
+    case 'Articulos':
+        if(isset($params[1]) && isset($params[2])){
+            $articuloController->viewArticulo($params[1],$params[2]); 
+            break;
+        } elseif (isset($params[1]) && !isset($params[2])){
+            $articuloController->viewArticulosByPais($params[1]);
+            break;
+        } else {
+            $articuloController->viewArticulos(); 
+            break;
+        }
+    case 'createPais': 
+        $paisController->createPais(); 
+        break;
+    case 'deletePais': 
+        $paisController->deletePais($params[1]); 
+        break;
+    case 'editPais': 
+        $paisController->editPais($params[1]); 
+        break;
+    case 'updatePais': 
+        $paisController->updatePais($params[1]); 
         break;
     case 'createArticulo': 
         $articuloController->createArticulo(); 
@@ -32,13 +60,15 @@ switch ($params[0]) {
     case 'deleteArticulo': 
         $articuloController->deleteArticulo($params[1]); 
         break;
-    case 'viewArticulo': 
-        $articuloController->viewArticulo($params[1]); 
+    case 'editArticulo': 
+        $articuloController->editArticulo($params[1]); 
+        break;
+    case 'updateArticulo': 
+        $articuloController->updateArticulo($params[1]); 
         break;
     default: 
         echo('404 Page not found'); 
         break;
 }
-
 
 ?>

@@ -26,10 +26,16 @@ class PaisModel{
         $statement->execute(array($nombre));
     }
 
-    function deletePais($id){
-        $statement = $this->db->prepare("DELETE FROM paises WHERE id_pais=?");
-        $statement->execute(array($id));
+    function updatePais($id, $nombre){
+        $statementArticulos = $this->db->prepare("UPDATE paises SET nombre = ? WHERE id_pais=?");
+        $statementArticulos->execute(array($nombre, $id));
     }
 
-
+    function deletePais($id){
+        $statementArticulos = $this->db->prepare("DELETE FROM articulos WHERE pais=?");
+        $statementArticulos->execute(array($id));
+        $statementPais = $this->db->prepare("DELETE FROM paises WHERE id_pais=?");
+        $statementPais->execute(array($id));
+    }
+    
 }

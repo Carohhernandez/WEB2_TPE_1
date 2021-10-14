@@ -1,21 +1,38 @@
 {include file="header.tpl"}
 
 <section>
-    <div class="container px-0 mt-5">
-        <h3 class="text-center">
-         {if (isset($pais))}
-             {$titulo|cat: $pais}
-        {else}
-            {$titulo}
-         {/if} 
-        </h3>
-        {foreach from=$articulos item=$articulo}
-            {if (!isset($pais))}
-                <p><i class="fa fa-map-marker mx-3" aria-hidden="true"></i>{$articulo->nombre}</p>
+    <h3 class="text-center mt-5">Nuestros articulos</h3>
+    <div  class='w-100 d-flex justify-content-around align-items-center'>
+        <div class="col-4 px-0 mt-5">
+            <div class="d-flex flex-column">
+                {foreach from=$articulos item=$articulo}
+                    <p class='mb-2'><i class="fa fa-map-marker mx-3" aria-hidden="true"></i>{$articulo->nombre}</p>
+                    <div class="d-flex align-items-center mb-4">
+                    <a href="{BASE_URL}Articulos/{$articulo->nombre}/{$articulo->titulo}" class="text-dark text-decoration-none my-2">
+                        <i class="fas fa-plane mx-3"></i>
+                        {$articulo->titulo}
+                    </a>
+                    {if ( $login && !isset($pais) )}
+                        <a href="deleteArticulo/{$articulo->id_articulo}"><i class="fa fa-trash mx-3 trash" aria-hidden="true"></i></a>
+                        <a href="editArticulo/{$articulo->id_articulo}"><i class="fas fa-pen mx-3 edit" aria-hidden="true"></i></a>
+                    {/if}
+                    </div> 
+                {/foreach}  
+            </div> 
+        </div>
+        <div class='col-4 px-0 mt-5'>
+            {if ($login && !isset($pais))}
+                <div class="d-flex p-4 form-container">
+                    {if isset($editArticulo)}
+                        {include file="articulo-edit-form.tpl"}
+                    {else}
+                        {include file="articulo-add-form.tpl"}                
+                    {/if}
+                </div>
             {/if}
-            <p><i class="fas fa-plane mx-3"></i>{$articulo->titulo}</p>
-        {/foreach}   
+        </div>
     </div>
 </section>
 
 {include file="footer.tpl"}
+
