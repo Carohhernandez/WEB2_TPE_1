@@ -13,7 +13,15 @@
                         {$articulo->titulo}
                     </a>
                     {if ( $login && ($smarty.session.role == 1) && !isset($pais) )}
-                        <a href="deleteArticulo/{$paginaActual}/{$articulo->id_articulo}"><i class="fa fa-trash mx-3 trash" aria-hidden="true"></i></a>
+                        <a href="deleteArticulo/{$paginaActual}/{$articulo->id_articulo}">
+                            <i 
+                                class="fa fa-trash mx-3 trash" 
+                                data-toggle="tooltip" 
+                                data-placement="top"
+                                title="Si elimina este articulo, se eliminaran tambien los comentarios relacionados" 
+                                aria-hidden="true"
+                            ></i>
+                        </a>
                         <a href="editArticulo/{$paginaActual}/{$articulo->id_articulo}"><i class="fas fa-pen mx-3 edit" aria-hidden="true"></i></a>
                     {/if}
                     </div> 
