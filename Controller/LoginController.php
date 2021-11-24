@@ -31,6 +31,41 @@ class LoginController {
         $this->view->showLogin("Te deslogueaste!", false);
     }
 
+    function register(){
+        $sessionStarted = $this->authHelper->checkLoggedIn();
+        if(!$sessionStarted){
+            $this->view->showRegister('',$sessionStarted);
+        } else {
+            $this->view->showHome();
+        };
+    }
+
+    function createUser(){
+        if (!empty($_POST['email']) && !empty($_POST['password']) && (isset($_POST['email']) && isset($_POST['password']))) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+     
+            // Busco si el email del usuario esta registrado
+            $user = $this->model->getUser($email);
+
+            if (!$user) {
+                // Si no esta registrado, lo creo
+                $this->model->insertUser($email, $password);
+
+                // despues de insertar el usuario nuevo, lo logueo
+                session_start();
+                $user = $this->model->getUser($email);
+                $_SESSION["email"] = $user->email;
+                $_SESSION["role"] = $user->admin_role;
+                
+                $this->view->showHome();
+            } else {
+                // Si esta registrado, lo aviso
+                $this->view->showRegister("El usuario ya existe!", false);
+            }
+        }
+    }
+
     function verifyLogin(){
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $email = $_POST['email'];
@@ -43,7 +78,8 @@ class LoginController {
             if ($user && password_verify($password, $user->password)) {
 
                 session_start();
-                $_SESSION["email"] = $email;
+                $_SESSION["email"] = $user->email;
+                $_SESSION["role"] = $user->admin_role;
                 
                 $this->view->showHome();
 

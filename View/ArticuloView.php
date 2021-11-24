@@ -16,22 +16,26 @@ class ArticuloView {
         $this->smarty->display('templates/single-view.tpl');
     }
 
-    function viewArticulos($articulos, $session, $paises, $editArticulo=null){
+    function viewArticulos($articulos, $session, $paises, $paginaActual, $numeroDePaginas, $editArticulo=null){
         $this->smarty->assign('articulos', $articulos);
         $this->smarty->assign('login', $session);
         $this->smarty->assign('paises', $paises);
         $this->smarty->assign('editArticulo', $editArticulo);
+        $this->smarty->assign('paginaActual', $paginaActual);
+        $this->smarty->assign('numeroDePaginas', $numeroDePaginas);
         $this->smarty->display('templates/articulos-view.tpl');
     }
 
-    function viewArticulosByPais($articulos, $session, $pais){
+    function viewArticulosByPais($articulos, $session, $pais, $paginaActual, $numeroDePaginas){
         $this->smarty->assign('articulos', $articulos);
         $this->smarty->assign('pais', $pais);
         $this->smarty->assign('login', $session);
+        $this->smarty->assign('paginaActual', $paginaActual);
+        $this->smarty->assign('numeroDePaginas', $numeroDePaginas);
         $this->smarty->display('templates/articulos-view.tpl');
     }
 
-    function showArticuloLocation(){
-        header("Location: ".BASE_URL."Articulos");
+    function showArticuloLocation($paginaActual){
+        header("Location: ".BASE_URL."Articulos/$paginaActual");
     }
 }

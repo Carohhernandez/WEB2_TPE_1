@@ -13,4 +13,12 @@ class AuthHelper{
             return true;
         }
     }
+
+    function getLoggedUserEmail(){
+        if(!isset($_SESSION["email"])){
+            return null;
+        } else {
+            return $_SESSION["email"];
+        }
+    }
 }

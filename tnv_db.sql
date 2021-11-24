@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2021 a las 03:26:10
+-- Tiempo de generación: 24-11-2021 a las 14:55:34
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -45,9 +45,32 @@ INSERT INTO `articulos` (`id_articulo`, `titulo`, `contenido`, `imagen`, `pais`)
 (3, 'Parque Provincial Aconcagua', 'Esta área es conocida internacionalmente por el cerro más alto del hemisferio occidental, el Aconcagua, de 6962 m. Protege el sector de la cordillera de los Andes donde alcanza la máxima altura de América, con numerosas cumbres que superan los 5.000 m. \r\n\r\nAdemás, preserva glaciares que originan ríos y vegas de una belleza natural que atrae a visitantes de todo el mundo. \r\n\r\nEl parque posee valores arqueológicos, incluso el mismo cerro Aconcagua era un sitio ceremonial de los incas, razón por la cual forma parte del sistema vial andino “Qhapac Ñan” –Camino del Inca- , declarado Patrimonio Mundial por la Unesco.', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/b5/a8/02/aconcagua-32-largejpg.jpg?w=1200&h=-1&s=1', 1),
 (4, 'Explorá Punta del Este', 'Uno de los puntos más fuertes de la ciudad es la Avenida Gorlero, la principal calle del balneario. En torno a esta avenida nació la vida turística de Punta del Este y en ella se encuentran galerías comerciales, restaurantes, cines, un casino, locales comerciales y muchos atractivos más. \r\n\r\nEl punto neurálgico de la avenida Gorlero es la Plaza Artigas, donde se desarrolla la popular feria de los artesanos; en sus numerosos stands se puede observar y adquirir artesanías en cuero, piedra, metales, vidrio y otros materiales. Otro lugar a visitar es la Isla Gorriti, se puede acceder mediante cruceros, veleros y barcazas que salen a toda hora desde el puerto de Punta del Este. También se pueden contratar paseos en helicóptero.', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/6e/80/9d/playa-mansa.jpg?w=1200&h=-1&s=1', 6),
 (5, 'Escapada a Colonia del Sacramento desde Montevideo', 'Haga una escapada desde la ciudad de Montevideo a Colonia del Sacramento. En este recorrido guiado de 9 horas podrá disfrutar de una excelente oportunidad para descubrir esta ciudadela. \r\n\r\nEn 1995, Colonia del Sacramento fue declarada Patrimonio Cultural por la UNESCO por su singular centro histórico, que guarda vestigios de la primera colonia portuguesa en el Río de la Plata en 1680, así como un rico patrimonio español de los siguientes siglos. \r\n\r\nEsta excursión es ideal para amantes de la historia pues permite pasear por un pueblo de siglos de antigüedad mientras escucha los comentarios del guía. Recogida en el hotel y traslado de vuelta con paradas a lo largo de una granja local, el museo de Granja Colonia y la tienda de caramelos están incluidos.', 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/6c/7f/b1.jpg', 6),
-(6, 'Tours de vinos por Wine Explorers', 'Si eres amante del vino o simplemente quieres conocer las mejores bodegas de Uruguay, su proceso de producción y ser recibido por los dueños de los establecimientos, ¡no debes perderte esta experiencia!\r\n\r\nVerónica González, la propietaria de la empresa, lo acompañará personalmente, lo llevará en su automóvil, almorzará con usted y le hará muchas recomendaciones que mejorarán su estadía en Uruguay.', 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/58/28/38.jpg', 6),
-(7, 'Parque de Ibirapuera', 'El Parque do Ibirapuera, principal lugar de interés del barrio, es una zona verde perfecta para disfrutar en familia que ofrece múltiples posibilidades: hacer picnic, relajarse, practicar deporte, hacer ejercicio o admirar obras de arte. \r\n\r\nEs un lugar muy concurrido los fines de semana y una zona de esparcimiento muy popular entre los paulistanos. En sus 1584 km2 hay tres lagos, dos museos y otros espacios culturales diversos. Además, es lugar de celebración de diversos eventos durante todo el año, como conciertos gratuitos y un espectáculo de luz y agua en diciembre con motivo de las fiestas navideñas. \r\n\r\nEl parque alberga dos importantes monumentos que visitar: el Obelisco y el Monumento a las Banderas. ¡En Ibirapuera encontrarás un lugar fantástico para desconectar!', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/22/70/87/ovo-de-pascoa-ibirapuera.jpg?w=1200&h=-1&s=1', 2),
-(8, 'Pão de Açúcar', 'El Pan de Azúcar (en portugués, Pão de Açúcar) es un peñasco situado en Río de Janeiro, Brasil, en la boca de la bahía de Guanabara sobre una península que sobresale en el océano Atlántico.\r\n\r\nEste pico es uno de los más llamativos entre los varios morros monolíticos de granito que se elevan directamente del borde del mar en Río de Janeiro. Un teleférico de cristal artesonado (llamado \"bondinho del Pan de Azúcar\" en el portugués popular) con capacidad para 65 pasajeros, recorre una ruta de 1.401 metros entre los morros de Babilonia y Urca cada cinco minutos. La línea del teleférico original fue construida en 1912.', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/8d/fc/12/foto-oficial.jpg?w=1200&h=-1&s=1', 2);
+(6, 'Tours de vinos por Wine Explorers EDITADO', 'Si eres amante del vino o simplemente quieres conocer las mejores bodegas de Uruguay, su proceso de producción y ser recibido por los dueños de los establecimientos, ¡no debes perderte esta experiencia!\r\n\r\nVerónica González, la propietaria de la empresa, lo acompañará personalmente, lo llevará en su automóvil, almorzará con usted y le hará muchas recomendaciones que mejorarán su estadía en Uruguay.', 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/58/28/38.jpg', 6),
+(7, 'Parque de Ibirapuera EDIT2', 'El Parque do Ibirapuera, principal lugar de interés del barrio, es una zona verde perfecta para disfrutar en familia que ofrece múltiples posibilidades: hacer picnic, relajarse, practicar deporte, hacer ejercicio o admirar obras de arte. \r\n\r\nEs un lugar muy concurrido los fines de semana y una zona de esparcimiento muy popular entre los paulistanos. En sus 1584 km2 hay tres lagos, dos museos y otros espacios culturales diversos. Además, es lugar de celebración de diversos eventos durante todo el año, como conciertos gratuitos y un espectáculo de luz y agua en diciembre con motivo de las fiestas navideñas. \r\n\r\nEl parque alberga dos importantes monumentos que visitar: el Obelisco y el Monumento a las Banderas. ¡En Ibirapuera encontrarás un lugar fantástico para desconectar!', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/22/70/87/ovo-de-pascoa-ibirapuera.jpg?w=1200&h=-1&s=1', 2),
+(8, 'Pão de Açúcar', 'El Pan de Azúcar (en portugués, Pão de Açúcar) es un peñasco situado en Río de Janeiro, Brasil, en la boca de la bahía de Guanabara sobre una península que sobresale en el océano Atlántico.\r\n\r\nEste pico es uno de los más llamativos entre los varios morros monolíticos de granito que se elevan directamente del borde del mar en Río de Janeiro. Un teleférico de cristal artesonado (llamado \"bondinho del Pan de Azúcar\" en el portugués popular) con capacidad para 65 pasajeros, recorre una ruta de 1.401 metros entre los morros de Babilonia y Urca cada cinco minutos. La línea del teleférico original fue construida en 1912.', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/8d/fc/12/foto-oficial.jpg?w=1200&h=-1&s=1', 2),
+(10, 'Prueba', 'Prueba contenido', 'prueba imagen', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id_comentario` int(11) NOT NULL,
+  `comentario` text NOT NULL,
+  `puntuacion` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_articulo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `comentario`, `puntuacion`, `id_usuario`, `id_articulo`) VALUES
+(3, 'muy bueno', 5, 6, 1),
+(4, 'no me resulto muy util', 2, 7, 2);
 
 -- --------------------------------------------------------
 
@@ -65,9 +88,10 @@ CREATE TABLE `paises` (
 --
 
 INSERT INTO `paises` (`id_pais`, `nombre`) VALUES
-(1, 'Argentina'),
+(1, 'Argentina la mejor'),
 (2, 'Brasil'),
-(6, 'Uruguay');
+(6, 'Uruguay'),
+(8, 'Prueba');
 
 -- --------------------------------------------------------
 
@@ -78,15 +102,23 @@ INSERT INTO `paises` (`id_pais`, `nombre`) VALUES
 CREATE TABLE `usuarios` (
   `id_usuario` int(5) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `admin_role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `email`, `password`) VALUES
-(2, 'admin@gmail.com', '$2y$10$6k/R3l0rRpnLQIEhVlpc3umLePFdKxQBzTwXNJnW0T5t6nMK8vOZO');
+INSERT INTO `usuarios` (`id_usuario`, `email`, `password`, `admin_role`) VALUES
+(2, 'admin@gmail.com', '$2y$10$6k/R3l0rRpnLQIEhVlpc3umLePFdKxQBzTwXNJnW0T5t6nMK8vOZO', 1),
+(5, 'user@gmail.com', '$2y$10$97eN7JotV1.agDZ0naVmuOW0bJHtslNkkwBTShvxrNhOjqBCLBKUO', 0),
+(7, 'caro@gmail.com', '$2y$10$mUm2ywJglYrW8Eu6BsPTMuL6I/U9fOFLJnmvoo2Zwp/Up9KcK.GtG', 1),
+(8, 'montoto@gmail.com', '$2y$10$IEr8u1/yeFL59J3xten3Eu8N13E3wovSxE/mVoTmWa/ma45lawhsW', 1),
+(9, 'montoto2@gmail.com', '$2y$10$Nu.hMZKxAux5bJO1vSw3TODz38C5fMsDHW85QuaOMsfMA5p6AUOp6', 0),
+(10, 'montoto3@gmail.com', '$2y$10$.r1A/8hwlNfVhWdUARfgIuxFTIjKb0Z3cMmlFFp2X3Hbfrso4SPE6', 0),
+(11, 'montoto4@gmail.com', '$2y$10$B3OoWOy1AoKo9ndJ3BKTtOHde4OO872//DgBqroGmmdTEb1h47k5u', 0),
+(12, 'montoto5@gmail.com', '$2y$10$xd7IPssQyWacS7RWbS4SEuW7gM/zExgrgFDpXT0oi5Cgf.6XRflGi', 0);
 
 --
 -- Índices para tablas volcadas
@@ -98,6 +130,12 @@ INSERT INTO `usuarios` (`id_usuario`, `email`, `password`) VALUES
 ALTER TABLE `articulos`
   ADD PRIMARY KEY (`id_articulo`),
   ADD KEY `pais` (`pais`);
+
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indices de la tabla `paises`
@@ -119,19 +157,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `paises`
 --
 ALTER TABLE `paises`
-  MODIFY `id_pais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas

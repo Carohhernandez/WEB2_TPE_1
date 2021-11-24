@@ -13,13 +13,25 @@ class UserModel{
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
-    function insertAdmin(){
-        $email = 'admin@gmail.com';
-        $userPassword = password_hash('123456',PASSWORD_BCRYPT);
+    function getUsers($email){
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE email != ? ');
+        $query->execute(array($email));
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 
-        $query = $this->db->prepare('INSERT INTO usuarios (email, password) VALUES (? , ?)');
-        $query->execute([$email,$userPassword]);
+    function insertUser($email, $password){
+        $userPassword = password_hash($password,PASSWORD_BCRYPT);
+        $query = $this->db->prepare('INSERT INTO usuarios (email, password, admin_role) VALUES (? , ?, ?)');
+        $query->execute([$email,$userPassword,0]);
+    }
 
-        echo "admin insertado";
+    function changeRole($userId, $role){
+        $query = $this->db->prepare('UPDATE usuarios SET admin_role = ? WHERE id_usuario = ?');
+        $query->execute([$role, $userId]);
+    }
+
+    function deleteUser($id){
+        $query = $this->db->prepare('DELETE FROM usuarios WHERE id_usuario = ?');
+        $query->execute([$id]);
     }
 }

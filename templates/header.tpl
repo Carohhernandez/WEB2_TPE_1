@@ -19,7 +19,11 @@
 <body>
     <nav class="mainNavbar navbar navbar-dark d-flex align-items-center justify-content-between w-100">
         <a href="{BASE_URL}" class="mainNavbar__brand navbar-brand"><h3 class="mb-0">Travel & Vacation</h3></a>
-        <a class="font-weight-bold text-light text-decoration-none mr-4" href="{if $login}logout{else}login{/if}">{if $login}Cerrar sesion{else}Iniciar sesion{/if}</a>
+        <div class="d-flex align-items-center justify-flex-end">
+            <a class="font-weight-bold text-light text-decoration-none mr-4" href="{if $login}logout{else}login{/if}">{if $login}Cerrar sesion{else}Iniciar sesion{/if}</a>
+            <a class="font-weight-bold text-light text-decoration-none mr-4" href="register">{if !$login}Register{/if}</a>
+            <a class="font-weight-bold text-light text-decoration-none mr-4" href="userAdmin">{if $login && $smarty.session.role == 1}Administrar{/if}</a>
+        </div>
     </nav>
     <section id="showcase" class="d-flex align-items-center">
         <div class="container text-dark text-center">

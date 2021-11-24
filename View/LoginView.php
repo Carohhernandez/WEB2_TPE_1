@@ -19,4 +19,10 @@ class LoginView{
         header("Location: ".BASE_URL."home");
     }
 
+    function showRegister($error = "", $sessionStarted){
+        $this->smarty->assign('login', $sessionStarted);
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('templates/register-view.tpl');
+    }
+
 }

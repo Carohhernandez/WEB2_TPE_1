@@ -7,11 +7,11 @@
             <div class="d-flex flex-column">
                 {foreach from=$paises item=$pais}
                     <div class="d-flex align-items-center">
-                        <a href="{BASE_URL}Articulos/{$pais->nombre}" class="text-dark text-decoration-none my-2">
+                        <a href="{BASE_URL}Articulos/1/{$pais->nombre}" class="text-dark text-decoration-none my-2">
                             <i class="fa fa-map-marker mx-3" aria-hidden="true"></i>
                             {$pais->nombre}
                         </a>
-                        {if $login}
+                        {if $login && ($smarty.session.role == 1)}
                             <a href="deletePais/{$pais->id_pais}">
                                 <i 
                                     class="fa fa-trash mx-3 trash" 
@@ -28,7 +28,7 @@
             </div> 
         </div>
         <div class='col-4 px-0 mt-5'>
-            {if $login}
+            {if $login && ($smarty.session.role == 1)}
                 <div class="d-flex p-4 form-container">
                     {if isset($editPais)}
                         {include file="pais-edit-form.tpl"}
@@ -40,7 +40,7 @@
         </div>  
     </div> 
     <div class="col-12 px-5 mt-5">
-        <a href='{BASE_URL}Articulos' class="font-weight-bold text-dark text-decoration-none">Ver todos los articulos<i class="fas fa-arrow-right mx-3"></i></a>
+        <a href='{BASE_URL}Articulos/1' class="font-weight-bold text-dark text-decoration-none">Ver todos los articulos<i class="fas fa-arrow-right mx-3"></i></a>
     </div>
 </section>
 

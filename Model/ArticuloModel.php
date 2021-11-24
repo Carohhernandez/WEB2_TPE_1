@@ -7,23 +7,38 @@ class ArticuloModel{
          $this->db = new PDO('mysql:host=localhost;'.'dbname=tnv_db;charset=utf8', 'root', '');
     }
 
-    function getArticulos(){
-        $statement = $this->db->prepare("SELECT * FROM articulos JOIN paises ON pais = id_pais");
+    function getArticulos($inicio, $postPorPagina){
+        $statement = $this->db->prepare("SELECT * FROM articulos JOIN paises ON pais = id_pais LIMIT $inicio, $postPorPagina");
         $statement->execute();
         $articulos = $statement->fetchAll(PDO::FETCH_OBJ);
         return $articulos;
     }
 
-    function getArticulosByPais($pais){
-        $statement = $this->db->prepare("SELECT * FROM articulos JOIN paises ON pais = id_pais WHERE nombre=?");
+    function getTotalArticulos(){
+        $statement = $this->db->prepare("SELECT COUNT(*) as totalCount FROM articulos");
+        $statement->execute();
+        $total = $statement->fetch(PDO::FETCH_OBJ);
+        return $total->totalCount;
+    }
+
+    function getArticulosByPais($pais, $inicio, $postPorPagina){
+        $statement = $this->db->prepare("SELECT * FROM articulos JOIN paises ON pais = id_pais WHERE nombre=? LIMIT $inicio, $postPorPagina");
         $statement->execute(array($pais));
         $articulos = $statement->fetchAll(PDO::FETCH_OBJ);
         return $articulos;
     }
 
-    function getArticulo($pais, $titulo){
-        $statement = $this->db->prepare( "SELECT * FROM articulos JOIN paises ON pais = id_pais WHERE nombre=? AND titulo=?");
-        $statement->execute(array($pais, $titulo));
+    
+    function getTotalArticulosByPais($pais){
+        $statement = $this->db->prepare("SELECT COUNT(*) FROM articulos JOIN paises ON pais = id_pais WHERE nombre=?");
+        $statement->execute(array($pais));
+        $total = $statement->fetchAll(PDO::FETCH_OBJ);
+        return $total;
+    }
+
+    function getArticulo($pais, $id){
+        $statement = $this->db->prepare( "SELECT * FROM articulos JOIN paises ON pais = id_pais WHERE nombre=? AND id_articulo=?");
+        $statement->execute(array($pais, $id));
         $articulo = $statement->fetch(PDO::FETCH_OBJ);
         return $articulo;
     }
