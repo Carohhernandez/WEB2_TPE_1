@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     const URL_API = "api/comentarios";
     var comentariosContainer = document.querySelector(".comentarios-container");
-    var role = comentariosContainer.getAttribute("data-role");
+    var role = comentariosContainer.getAttribute("data-role") || "";
 
     function hideDelete()  {  
-       const btn = document.querySelector(".deleteComentario");
-       if (role == 1) {
-        btn.style.visibility="visible"; 
-       } else {
-        btn.style.visibility="hidden"; 
-       }
+       const btns = document.querySelectorAll(".deleteComentario");
+       btns.forEach(btn => {
+            if (role == 1) {
+                btn.style.visibility="visible"; 
+            } else {
+                btn.style.visibility="hidden"; 
+            }
+        });     
     }
 
     async function getComentarios() {
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             section.innerHTML += `<tr>
                 <td class='px-4 py-1'>${comentario.id_usuario}</td>
                 <td class='px-4 py-1'>${comentario.comentario}</td>
-                <td class='px-4 py-1'> ${comentario.puntuacion}</td>
+                <td class='px-4 py-1'>${comentario.puntuacion}</td>
                 <td px-4 py-1'><button class="deleteComentario" id=${comentario.id_comentario}><i class="fa fa-trash mx-3 trash" aria-hidden="true"></i></button></td>
             </tr>`;
         });
@@ -73,13 +75,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
         return data;
     }
 
-    document.querySelector("#formComentario").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const data = getFormData();
-        insertarComentario(data);
-    });
+    if (role == 0 || role == 1) {
+        document.querySelector("#formComentario").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const data = getFormData();
+            insertarComentario(data);
+        });
+    }
 
     async function insertarComentario(data) {
+        console.log('insert comment');
         const response = await fetch(`${URL_API}`,{
             method: 'POST',
             headers: {
@@ -88,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             },
             body: JSON.stringify(data)        
         });
+        console.log(response);
         if (response.ok) {
             getComentarios();
         }
