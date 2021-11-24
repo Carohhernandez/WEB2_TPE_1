@@ -61,8 +61,10 @@ class ArticuloModel{
     }
 
     function deleteArticulo($id){
-        $statement = $this->db->prepare("DELETE FROM articulos WHERE id_articulo=?");
-        $statement->execute(array($id));
+        $statementComentarios = $this->db->prepare("DELETE FROM comentarios WHERE id_articulo=?");
+        $statementComentarios->execute(array($id));
+        $statementArticulos = $this->db->prepare("DELETE FROM articulos WHERE id_articulo=?");
+        $statementArticulos->execute(array($id));
     }
 
     function getPaises(){
