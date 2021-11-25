@@ -45,8 +45,26 @@ class ArticuloController{
     }
 
     function createArticulo(){
-        $this->model->insertArticulo($_POST['titulo'], $_POST['contenido'], $_POST['imagen'], $_POST['pais']);
-        $this->view->showArticuloLocation(1);
+        if(!empty($_POST['titulo']) && !empty($_POST['contenido']) && !empty($_POST['pais'])){
+            echo "entre al primer if";
+            var_dump($_FILES);
+            var_dump($_FILES['input_name']['tmp_name']);
+            if(
+                ($_FILES['input_name']['type'] == "image/jpg") 
+                || ($_FILES['input_name']['type'] == "image/jpeg") 
+                || ($_FILES['input_name']['type'] == "image/png")
+            ) {
+                echo "Imagen correcta";
+                $this->model->insertArticulo($_POST['titulo'], $_POST['contenido'], $_POST['pais'], $_FILES['input_name']['tmp_name']);
+            }else {
+                echo "Imagen incorrecta";
+                $this->model->insertArticulo($_POST['titulo'], $_POST['contenido'], $_POST['pais']);
+            }
+            $this->view->showArticuloLocation(1);
+        } else {
+            var_dump($_POST);
+            var_dump($_FILES);
+        }
     }
 
     function editArticulo($paginaActual, $id){

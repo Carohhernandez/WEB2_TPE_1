@@ -50,9 +50,20 @@ class ArticuloModel{
         return $articulo;
     }
 
-    function insertArticulo($titulo, $contenido, $imagen, $pais){
-        $statement = $this->db->prepare("INSERT INTO articulos(titulo, contenido, imagen, pais) VALUES(?, ?, ?, ?)");
-        $statement->execute(array($titulo, $contenido, $imagen, $pais ));
+    function insertArticulo($titulo, $contenido, $pais, $imagen = null){
+        $pathImg = null;
+        if ($imagen){
+            $pathImg = $this->uploadImage($imagen);
+        }
+
+        $statement = $this->db->prepare("INSERT INTO articulos(titulo, contenido, pais, imagen) VALUES(?, ?, ?, ?)");
+        $statement->execute(array($titulo, $contenido, $pais, $pathImg));
+    }
+
+    private function uploadImage($imagen){
+        $target = './images/uploaded/' . uniqid() . '.jpg';
+        move_uploaded_file($imagen, $target);
+        return $target;
     }
 
     function updateArticulo($id, $titulo, $contenido, $imagen, $pais){

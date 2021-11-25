@@ -1,4 +1,4 @@
-<form action="updateArticulo/{$paginaActual}/{$editArticulo->id_articulo}" method="POST" id="formArticle" class='d-flex flex-column w-100'>
+<form action="updateArticulo/{$paginaActual}/{$editArticulo->id_articulo}" method="POST" id="formArticle" enctype="multipart/form-data" class='d-flex flex-column w-100'>
     <label class='d-block mb-2'>Ingrese el titulo del articulo:</label>
     <input type="text" name="titulo" placeholder="Titulo" class='mb-2' required value="{$editArticulo->titulo}">
     <label class='d-block mb-2'>Ingrese el contenido del articulo:</label>
